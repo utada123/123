@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IELTS Study Browser</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="sidebar" aria-label="IELTS resources">
+        <header class="brand">
+          <div class="brand-mark" aria-hidden="true">I</div>
+          <div>
+            <p class="eyebrow">IELTS Study Browser</p>
+            <h1>&#38597;&#24605;&#23398;&#20064;&#27983;&#35272;&#22120;</h1>
+          </div>
+        </header>
+
+        <section class="panel compact">
+          <div class="section-title">
+            <h2>&#20170;&#26085;&#30446;&#26631;</h2>
+            <strong id="todayProgress">0/4</strong>
+          </div>
+          <div class="goal-list" id="goalList"></div>
+        </section>
+
+        <section class="panel">
+          <div class="section-title">
+            <h2>&#25216;&#33021;&#23548;&#33322;</h2>
+            <button class="icon-button" id="themeToggle" type="button" title="Theme" aria-label="Theme">T</button>
+          </div>
+          <nav class="skill-tabs" id="skillTabs" aria-label="IELTS skill categories"></nav>
+        </section>
+
+        <section class="panel resource-panel">
+          <div class="section-title">
+            <h2>&#36164;&#28304;&#24211;</h2>
+            <span id="resourceCount">0</span>
+          </div>
+          <div class="resource-list" id="resourceList"></div>
+        </section>
+      </aside>
+
+      <section class="browser" aria-label="Study browser">
+        <div class="topbar">
+          <button class="icon-button" id="backButton" type="button" title="Back" aria-label="Back">&lt;</button>
+          <button class="icon-button" id="forwardButton" type="button" title="Forward" aria-label="Forward">&gt;</button>
+          <button class="icon-button" id="homeButton" type="button" title="Home" aria-label="Home">H</button>
+          <form class="address-form" id="addressForm">
+            <input id="addressInput" type="search" autocomplete="off" placeholder="Search IELTS topics, skills, tasks, or enter a URL">
+            <button class="primary-button" type="submit">&#21069;&#24448;</button>
+          </form>
+        </div>
+
+        <article class="page-view" id="pageView" tabindex="0"></article>
+      </section>
+
+      <aside class="study-dock" aria-label="Study tools">
+        <section class="panel timer-panel">
+          <div class="section-title">
+            <h2>&#19987;&#27880;&#35745;&#26102;</h2>
+            <span id="timerMode">Reading</span>
+          </div>
+          <div class="timer-display" id="timerDisplay">20:00</div>
+          <div class="timer-actions">
+            <button class="ghost-button" id="timerMinus" type="button">-5</button>
+            <button class="primary-button" id="timerToggle" type="button">&#24320;&#22987;</button>
+            <button class="ghost-button" id="timerPlus" type="button">+5</button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="section-title">
+            <h2>&#29983;&#35789;&#26412;</h2>
+            <span id="vocabCount">0</span>
+          </div>
+          <form class="mini-form" id="vocabForm">
+            <input id="wordInput" type="text" placeholder="word / phrase" required>
+            <input id="meaningInput" type="text" placeholder="meaning, collocation, or sample sentence">
+            <button class="primary-button" type="submit">&#28155;&#21152;</button>
+          </form>
+          <div class="chip-list" id="vocabList"></div>
+        </section>
+
+        <section class="panel notes-panel">
+          <div class="section-title">
+            <h2>&#23398;&#20064;&#31508;&#35760;</h2>
+            <span id="saveState">&#24050;&#20445;&#23384;</span>
+          </div>
+          <textarea id="notesInput" placeholder="Write reusable sentences, signal words, mistake patterns, or speaking ideas."></textarea>
+        </section>
+      </aside>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
